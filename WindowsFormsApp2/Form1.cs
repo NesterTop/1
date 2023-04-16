@@ -70,5 +70,14 @@ namespace WindowsFormsApp2
 
             connection.Close();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            DataBase dataBase = new DataBase();
+            
+            dataBase.OpenConnection();
+            DataTable dm = dataBase.UpdateData("select * from users");
+            dataBase.CloseConnection();
+        }
     }
 }
